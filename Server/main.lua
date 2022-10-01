@@ -5,14 +5,12 @@ local function LoadESXVersion()
         local src = source
         local xPlayer = ESX.GetPlayerFromId(src)
         local orange = math.random(Config.Picking.ReceiveItem.minAmount, Config.Picking.ReceiveItem.maxAmount)
-        local distance = 2.5
-        local check = GetEntityCoords(GetPlayerPed(src))
-        for _, v in pairs(OrangeTrees) do
-            if #(check - v.coords) > distance then
-                xPlayer.addInventoryItem('orange', orange)
-                TriggerClientEvent('esx:showNotification', src, Config.Text["PickedOranges"], "success")
-            end
-            return
+        local check = CheckDistance(src)
+        if check then
+            xPlayer.addInventoryItem('orange', orange)
+            TriggerClientEvent('esx:showNotification', src, Config.Text["PickedOranges"], "success")
+        else
+            print(string.format("ProjextX-OrangeFarm: %s is not near the orange farm", src))
         end
     end)
 
@@ -95,15 +93,13 @@ local function LoadQBVersion()
         local src = source
         local Player = QBCore.Functions.GetPlayer(tonumber(source))
         local orange = math.random(Config.Picking.ReceiveItem.minAmount, Config.Picking.ReceiveItem.maxAmount)
-        local distance = 2.5
-        local check = GetEntityCoords(GetPlayerPed(src))
-        for _, v in pairs(OrangeTrees) do
-            if #(check - v.coords) > distance then
+        local check = CheckDistance(src)
+        if check then
             Player.Functions.AddItem('orange', orange)
             TriggerClientEvent('QBCore:Notify', src, Config.Text["PickedOranges"], "success")
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['orange'], "add")
-            end
-            return
+        else
+            print(string.format("ProjextX-OrangeFarm: %s is not near the orange farm", src))
         end
     end)
 
@@ -211,6 +207,18 @@ local function LoadQBVersion()
         end
     end)
 
+end
+
+CheckDistance = function (source)
+    local ped = GetPlayerPed(source)
+    local pos = GetEntityCoords(ped)
+    for _, v in pairs(OrangeTrees) do
+        if #(pos - v.coords) < Config.MinDistance then
+            return true
+        end
+    end
+
+    return false
 end
 
 if Config.Framework == "ESX" then

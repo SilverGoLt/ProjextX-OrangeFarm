@@ -1,9 +1,11 @@
 Config = {}
 
-Config.Framework = "ESX"      -- ESX = ESX Framework  | QB for QBRemastered and QBCore
+Config.Framework = "QB"      -- ESX = ESX Framework  | QB for QBRemastered and QBCore
 Config.Target = "OX"         -- OX - OX Target | QB - QB Target (Only works for QB)
 
 Config.UseBlips = true -- True turns blips on | false turns blips off
+
+Config.MinDistance = 2.5 -- Minimal distance from the tree to collect (Exploiter Check)
 
 Config.Blips = {
     Field = {
