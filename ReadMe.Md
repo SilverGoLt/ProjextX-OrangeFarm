@@ -43,7 +43,7 @@ https://discord.gg/ezU9f2nWAs
 - [ox_target](https://github.com/overextended/ox_target) (Config Option)
 - [qb-target](https://github.com/qbcore-framework/qb-target) (Config Option)
 - [ox_lib](https://github.com/overextended/ox_lib)
-- [qb-core remastered](https://github.com/qbcore-framework/qb-core)
+- [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Preview's
 - [ShowCase Video](https://youtu.be/b4ou66Z1Nco)
