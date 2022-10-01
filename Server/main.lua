@@ -8,11 +8,11 @@ local function LoadESXVersion()
         local distance = 2.5
         local check = GetEntityCoords(GetPlayerPed(src))
         for _, v in pairs(OrangeTrees) do
-            if #(check - v.coords) > distance then
+            if #(check - v.coords) < distance then
                 xPlayer.addInventoryItem('orange', orange)
                 TriggerClientEvent('esx:showNotification', src, Config.Text["PickedOranges"], "success")
+                break
             end
-            return
         end
     end)
 
@@ -98,12 +98,12 @@ local function LoadQBVersion()
         local distance = 2.5
         local check = GetEntityCoords(GetPlayerPed(src))
         for _, v in pairs(OrangeTrees) do
-            if #(check - v.coords) > distance then
-            Player.Functions.AddItem('orange', orange)
-            TriggerClientEvent('QBCore:Notify', src, Config.Text["PickedOranges"], "success")
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['orange'], "add")
+            if #(check - v.coords) < distance then
+                Player.Functions.AddItem('orange', orange)
+                TriggerClientEvent('QBCore:Notify', src, Config.Text["PickedOranges"], "success")
+                TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['orange'], "add")
+                break
             end
-            return
         end
     end)
 
