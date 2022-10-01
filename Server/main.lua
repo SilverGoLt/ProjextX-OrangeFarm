@@ -5,8 +5,15 @@ local function LoadESXVersion()
         local src = source
         local xPlayer = ESX.GetPlayerFromId(src)
         local orange = math.random(Config.Picking.ReceiveItem.minAmount, Config.Picking.ReceiveItem.maxAmount)
-        xPlayer.addInventoryItem('orange', orange)
-        TriggerClientEvent('esx:showNotification', src, Config.Text["PickedOranges"], "success")
+        local distance = 2.5
+        local check = GetEntityCoords(GetPlayerPed(src))
+        for _, v in pairs(OrangeTrees) do
+            if #(check - v.coords) > distance then
+                xPlayer.addInventoryItem('orange', orange)
+                TriggerClientEvent('esx:showNotification', src, Config.Text["PickedOranges"], "success")
+            end
+            return
+        end
     end)
 
     RegisterNetEvent('ProjextX-OrangeFarm:TradingToOrangeJuice', function()
@@ -88,10 +95,16 @@ local function LoadQBVersion()
         local src = source
         local Player = QBCore.Functions.GetPlayer(tonumber(source))
         local orange = math.random(Config.Picking.ReceiveItem.minAmount, Config.Picking.ReceiveItem.maxAmount)
-        Player.Functions.AddItem('orange', orange)
-        TriggerClientEvent('QBCore:Notify', src, Config.Text["PickedOranges"], "success")
-        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['orange'], "add")
-
+        local distance = 2.5
+        local check = GetEntityCoords(GetPlayerPed(src))
+        for _, v in pairs(OrangeTrees) do
+            if #(check - v.coords) > distance then
+            Player.Functions.AddItem('orange', orange)
+            TriggerClientEvent('QBCore:Notify', src, Config.Text["PickedOranges"], "success")
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['orange'], "add")
+            end
+            return
+        end
     end)
 
     RegisterServerEvent('ProjextX-OrangeFarm:TradingToOrangeJuice', function()
@@ -197,6 +210,7 @@ local function LoadQBVersion()
             TriggerClientEvent("consumables:client:Drink", source, item.name)
         end
     end)
+
 end
 
 if Config.Framework == "ESX" then
