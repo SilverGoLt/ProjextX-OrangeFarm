@@ -1,3 +1,12 @@
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+International License][cc-by-nc-sa].
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
 # About
 ProjextX-OrangeFarm is a ***Free*** orange picking resource that uses grape seed farm as the sole place for picking oranges. Once you have collected the oranges then you will need to go to house located near *EAST Sandy Shorces exit 68* Which is located also on the blip with the processing blip. There you will be able to process *Raw Oranges*  into orange juice or you can sell raw oranges here at the processor. If you have processed oranged juices in vinewood you will be able to sell the *Orange Juice* at the dinner.
 
@@ -35,6 +44,15 @@ https://discord.gg/ezU9f2nWAs
 - [qb-target](https://github.com/qbcore-framework/qb-target) (Config Option)
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [qb-core remastered](https://github.com/qbcore-framework/qb-core)
+
+## Preview's
+- [ShowCase Video](https://youtu.be/b4ou66Z1Nco)
+
+![Preview Screenshot](https://i.imgur.com/NOHlypk.jpeg)
+
+![Preview Screenshot](https://i.imgur.com/rZJbpVo.jpeg)
+
+![Preview Screenshot](https://i.imgur.com/6kPzfKv.jpeg)
 
 
 # Install ESX
