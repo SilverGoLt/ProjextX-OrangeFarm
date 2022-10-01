@@ -183,6 +183,20 @@ local function LoadQBVersion()
             end
         end
     end)
+
+    QBCore.Functions.CreateUseableItem("orange", function(source, item)
+        local Player = QBCore.Functions.GetPlayer(source)
+          if Player.Functions.RemoveItem(item.name, 1, item.slot) then
+            TriggerClientEvent("consumables:client:Eat", source, item.name)
+        end
+    end)
+
+    QBCore.Functions.CreateUseableItem("orange_juice", function(source, item)
+        local Player = QBCore.Functions.GetPlayer(source)
+          if Player.Functions.RemoveItem(item.name, 1, item.slot) then
+            TriggerClientEvent("consumables:client:Drink", source, item.name)
+        end
+    end)
 end
 
 if Config.Framework == "ESX" then
