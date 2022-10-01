@@ -46,7 +46,7 @@ https://discord.gg/ezU9f2nWAs
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 
 ## Preview's
-- [ShowCase Video](https://youtu.be/b4ou66Z1Nco)
+- [ShowCase Video](https://youtu.be/KFj_WiAhp0s)
 
 ![Preview Screenshot](https://i.imgur.com/NOHlypk.jpeg)
 
